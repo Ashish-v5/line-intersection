@@ -25,5 +25,10 @@ public class Line {
         return b;
     }
 
+    public Integer getIntersection(Line line2, int defaultValue) {
+
+        return defaultValue;
+    }
+
 
 }
