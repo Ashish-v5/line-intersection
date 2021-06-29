@@ -25,9 +25,8 @@ public class Line {
         return b;
     }
 
-    public Integer getIntersection(Line line2, int defaultValue) {
-
-        return defaultValue;
+    public Point getIntersection(Line line2) {
+        throw new UnsupportedOperationException();
     }
 
 

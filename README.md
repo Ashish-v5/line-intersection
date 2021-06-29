@@ -1,3 +1,5 @@
 ## Line Intersection
 
-Your task it to go to Line class and fill method getIntersection(Line, int) which should return point of intersection of two lines. If lines never intersect should return null. If lines are in the same position should return int defaultValue.
+Your task it to go to [`Line`](src/main/java/ru/danka/intersection/Line.java) and fill method `getIntersection(Line, int)` which should return [`Point`](src/main/java/ru/danka/intersection/Point.java) of intersection of two lines.</br>
+-If lines never intersect should return null. </br>
+-If lines are in the same position should return int defaultValue.
