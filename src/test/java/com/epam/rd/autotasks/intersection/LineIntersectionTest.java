@@ -1,4 +1,4 @@
-package ru.danka.intersection;
+package com.epam.rd.autotasks.intersection;
 
 
 import org.junit.jupiter.api.Assertions;

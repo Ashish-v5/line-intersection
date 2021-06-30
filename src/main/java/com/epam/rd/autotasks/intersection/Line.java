@@ -1,4 +1,4 @@
-package ru.danka.intersection;
+package com.epam.rd.autotasks.intersection;
 
 public class Line {
     private int k;
@@ -6,14 +6,6 @@ public class Line {
 
     public Line(int k, int b) {
         this.k = k;
-        this.b = b;
-    }
-
-    public void setK(int k) {
-        this.k = k;
-    }
-
-    public void setB(int b) {
         this.b = b;
     }
 

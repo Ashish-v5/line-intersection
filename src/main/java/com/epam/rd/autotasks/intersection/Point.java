@@ -1,4 +1,4 @@
-package ru.danka.intersection;
+package com.epam.rd.autotasks.intersection;
 
 public class Point {
     private final int x;
