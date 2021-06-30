@@ -18,4 +18,26 @@ public class LineIntersectionTest {
         Line line2 = new Line(0,0);
         Assertions.assertEquals(null, line.getIntersection(line2));
     }
+
+    @Test
+    public void nullPointerTest() {
+        Line line = new Line(0, 0);
+        Assertions.assertNull(line.getIntersection(null));
+    }
+
+    @Test
+    public void parallelLinesTest() {
+        Line line1 = new Line(1, 2);
+        Line line2 = new Line(1, 3);
+        Assertions.assertEquals(null, line1.getIntersection(line2));
+    }
+
+    @Test
+    public void inZeroInterSectionLinesTest() {
+        Line line1 = new Line(1, 0);
+        Line line2 = new Line(2, 0);
+        Point point = line1.getIntersection(line2);
+        Assertions.assertEquals(0, point.getY() );
+    }
+
 }
