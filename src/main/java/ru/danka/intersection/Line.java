@@ -26,7 +26,9 @@ public class Line {
     }
 
     public Point getIntersection(Line line2) {
+        //put your code here
         throw new UnsupportedOperationException();
+
     }
 
 
