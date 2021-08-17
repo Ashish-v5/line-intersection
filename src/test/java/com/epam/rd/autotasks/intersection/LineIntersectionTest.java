@@ -1,43 +1,41 @@
 package com.epam.rd.autotasks.intersection;
 
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class LineIntersectionTest {
-    @Test
-    public void resultTest(){
-        Line line = new Line(1,2);
-        Line line2 = new Line(2,1);
-        Assertions.assertEquals(1, line.getIntersection(line2).getX());
+
+    @ParameterizedTest
+    @CsvSource({
+            "1,2,2,1,(1;3)",
+            "1,0,2,0,(0;0)",
+            "4,3,1,3,(0;3)",
+            "2,56,4,-4,(30;116)",
+            "5,-8,3,2,(5;17)",
+    })
+    public void regularTest(int k1, int b1, int k2, int b2, String expected) {
+        Line line = new Line(k1, b1);
+        Line line2 = new Line(k2, b2);
+        assertEquals(expected, line.intersection(line2).toString());
     }
 
-    @Test
-    public void divideByZeroTest(){
-        Line line = new Line(0,0);
-        Line line2 = new Line(0,0);
-        Assertions.assertEquals(null, line.getIntersection(line2));
+    @ParameterizedTest
+    @CsvSource({"0,0,0,0", "1,1,1,1", "3,-9,3,-9"})
+    public void coincidingTest(int k1, int b1, int k2, int b2) {
+        Line lhs = new Line(k1, b1);
+        Line rhs = new Line(k2, b2);
+        assertNull(lhs.intersection(rhs));
     }
 
-    @Test
-    public void nullPointerTest() {
-        Line line = new Line(0, 0);
-        Assertions.assertNull(line.getIntersection(null));
+    @ParameterizedTest
+    @CsvSource({"0,0,0,-3", "1,-1,1,1", "3,359,3,-9"})
+    public void parallelTest(int k1, int b1, int k2, int b2) {
+        Line lhs = new Line(k1, b1);
+        Line rhs = new Line(k2, b2);
+        assertNull(lhs.intersection(rhs));
     }
-
-    @Test
-    public void parallelLinesTest() {
-        Line line1 = new Line(1, 2);
-        Line line2 = new Line(1, 3);
-        Assertions.assertEquals(null, line1.getIntersection(line2));
-    }
-
-    @Test
-    public void inZeroInterSectionLinesTest() {
-        Line line1 = new Line(1, 0);
-        Line line2 = new Line(2, 0);
-        Point point = line1.getIntersection(line2);
-        Assertions.assertEquals(0, point.getY() );
-    }
-
 }
