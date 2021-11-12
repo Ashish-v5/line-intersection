@@ -9,6 +9,9 @@ Estimated workload of this exercise is _45 min_.
 Please, implement the method `intersection(Line)` in class [`Line`](src/main/java/com/epam/rd/autotasks/intersection/Line.java).
 It  must return a [`Point`](src/main/java/com/epam/rd/autotasks/intersection/Point.java) of intersection of two lines.
 
+Note that lines are defined by linear equations: `y = k * x + b`.
+Line constructor takes `k` and `b` coefficients as parameters.
+
 If lines coincide or do not intersect, the method must return null.
 It may seem surprising that we use `int` for arguments and fields of coordinates.
 The point is that using `double` will bring some extra complexity we want to avoid for this basic exercise.
